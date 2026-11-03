@@ -27,14 +27,6 @@ Whether you're craving a rich cup of espresso or a cleanly styled utility-first 
 
 ---
 
-## 📸 Demo Previews
-
-| Hero Section | Products Grid |
-| :---: | :---: |
-| ![Hero Section](./Screenshot%202026-11-03%20194446.jpg) | ![Products Grid](./Screenshot%202026-11-03%20194459.jpg) |
-
----
-
 ## 🛠️ Built With
 
 - **HTML5**
