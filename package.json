@@ -4,6 +4,6 @@
   },
 
 "scripts": {
-  "build": "tailwindcss -i ./src/input.css -o ./public/styles/app.css"
+  "build": "node ./node_modules/tailwindcss/lib/cli.js -i ./src/input.css -o ./public/styles/app.css"
 }
 }
