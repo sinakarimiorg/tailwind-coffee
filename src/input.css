@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "Dana";
+        /* 400 */
+        src: local("Dana"), url("../fonts/Dana/woff2/DanaFaNum-Regular.woff2") format("woff2");
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Dana Medium";
+        /* 500 */
+        src: local("Dana Medium"), url("../fonts/Dana/woff2/DanaFaNum-Medium.woff2") format("woff2");
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Dana DemiBold";
+        /* 600 */
+        src: local("Dana DemiBold"), url("../fonts/Dana/woff2/DanaFaNum-DemiBold.woff2") format("woff2");
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Morabba Light";
+        src: local("Morabba"), url("../fonts/Morabba/woff2/Morabba-Light.woff2") format("woff2");
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Morabba Medium";
+        src: local("Morabba Medium"), url("../fonts/Morabba/woff2/Morabba-Medium.woff2") format("woff2");
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Morabba Bold";
+        src: local("Morabba Bold"), url("../fonts/Morabba/woff2/Morabba-Bold.woff2") format("woff2");
+        font-display: swap;
+    }
+}
+
+@layer components {
+
+    .submenu {
+        @apply hidden flex-col items-start mt-3 pr-7 gap-y-3 text-sm text-zinc-600 dark:text-white
+    }
+
+    .submenu-open-btn {
+        @apply flex
+    }
+
+    .submenu__item--active {
+        @apply relative text-orange-300 pr-2.5
+    }
+
+    .submenu__item--active::after {
+        content: "";
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 100px;
+        background-color: #FDBA74;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .overlay {
+        @apply invisible opacity-0 fixed inset-0 bg-black/40 w-full h-full z-10 transition-all
+    }
+
+    .overlay--visible {
+        @apply visible opacity-100
+    }
+
+    .circle {
+        @apply hidden md:flex items-center justify-center border rounded-full
+    }
+
+    .lg-circle {
+        @apply absolute bottom-0 right-0 left-0 mx-auto translate-y-2/4 w-[203px] h-[203px] border-white/25
+    }
+
+    .md-circle {
+        @apply w-[145px] h-[145px] border-white/50
+    }
+
+    .sm-circle {
+        @apply w-[95px] h-[95px] border-white/80
+    }
+
+    @media (min-width: 1280px) {
+        html.dark .products {
+            background-image: url('../images/products-bg.png');
+        }
+
+        .products {
+            background: linear-gradient(rgba(243, 244, 246, 0.50), rgba(243, 244, 246, 0.50)), url('../images/products-bg.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    }
+
+    /* Section Title Styles */
+    .section-title {
+        @apply font-MorabbaMedium text-2xl md:text-4xl lg:text-5xl
+    }
+
+    .section-subtitle {
+        @apply inline-block font-MorabbaLight text-lg/8 md:text-2xl lg:text-3xl/[48px] mt-0.5 md:mt-1.5
+    }
+
+    .section-link {
+        @apply flex items-center md:gap-x-1 h-10 pr-3 pl-1 text-orange-300 md:text-xl tracking-tightest md:hover:bg-orange-300/20 rounded-md transition-all
+    }
+
+    .product-box {
+        @apply relative max-w-full p-2 md:p-5 bg-white dark:bg-zinc-700 text-zinc-700 dark:text-white shadow-custom rounded-2xl
+    }
+
+    .ex-price {
+        @apply relative text-gray-400
+    }
+
+    .ex-price::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        bottom: 2px;
+        margin: auto;
+        width: 100%;
+        height: 1px;
+        background-color: #ef4444;
+    }
+
+    .category-banner__item1 {
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.6)33.85%, rgba(0, 0, 0, 0.1)100%), url('../images/categories/category-right.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .category-banner__item2 {
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.6)33.85%, rgba(0, 0, 0, 0.1)100%), url('../images/categories/category-left.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .category-product__item {
+        @apply flex-center flex-col w-25 md:w-50
+    }
+
+    .category-product__img {
+        @apply w-full h-25 md:h-50 pb-1.5 md:pb-2.5
+    }
+
+    .category-product__span {
+        @apply font-DanaDemiBold text-sm md:text-xl text-zinc-700 dark:text-white text-center
+    }
+
+    .club-box_item-box {
+        @apply gap-y-[3px] md:gap-y-1.5 w-[72px] h-[72px] md:w-[98px] md:h-[98px] py-1.5 md:pt-5 text-xs md:text-sm text-center bg-white rounded-2xl text-emerald-600
+    }
+
+    .services-wrap {
+        @apply relative
+    }
+
+    .services-wrap::after,
+    .services-wrap::before {
+        content: '';
+        display: block;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        background-color: #D1D5DB;
+    }
+
+    .services-wrap::after {
+        width: 100%;
+        height: 1px;
+    }
+
+    .services-wrap::before {
+        width: 1px;
+        height: calc(100% + 20px);
+    }
+
+    html.dark .services-wrap::after,
+    html.dark .services-wrap::before {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (min-width: 1024px) {
+
+        .services-wrap::after,
+        .services-wrap::before {
+            content: none;
+        }
+    }
+
+    #footer {
+        @apply relative py-8 md:pb-12 md:pt-[62px] px-4 sm:px-10 lg:px-14 xl:px-24 bg-zinc-700 text-gray-300
+    }
+
+    .footer-list__item {
+        @apply inline-flex items-center gap-x-2 md:gap-x-2.5 md:text-xl leading-7 hover:text-orange-300 transition-all
+    }
+
+    .footer-list__item-mark {
+        @apply w-2 md:w-2.5 h-1 bg-current rounded-[23px]
+    }
+
+}
+
+@layer utilities {
+    .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ltr-dir {
+        direction: ltr;
+        text-align: left;
+    }
+}
